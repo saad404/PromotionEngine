@@ -4,22 +4,22 @@ import java.math.BigDecimal;
 
 public class Product {
 
-    private String skuId;
+    private SKU skuId;
     private String desc;
     private BigDecimal price;
 
-    public Product(String skuId, String desc, BigDecimal price) {
+    public Product(SKU skuId, String desc, BigDecimal price) {
         super();
         this.skuId = skuId;
         this.desc = desc;
         this.price = price;
     }
 
-    public String getSkuId() {
+    public SKU getSkuId() {
         return skuId;
     }
 
-    public void setSkuId(String skuId) {
+    public void setSkuId(SKU skuId) {
         this.skuId = skuId;
     }
 

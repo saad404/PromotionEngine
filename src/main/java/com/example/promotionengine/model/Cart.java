@@ -2,6 +2,10 @@ package com.example.promotionengine.model;
 
 import java.util.List;
 
+/**
+ * This is the Cart class where one can get the full list of products in the cart and also set them.
+ * */
+
 public class Cart {
     private List<Product> products;
 

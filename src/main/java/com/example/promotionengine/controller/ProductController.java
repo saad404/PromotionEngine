@@ -16,7 +16,7 @@ public class ProductController {
     PromotionService service = new PromotionServiceImpl();
 
     public Cart addProductToCart(List<Product> product) throws ProductIsEmptyException {
-        Cart cart = null;
+        Cart cart;
         if (product != null) {
             cart = new Cart(product);
         } else {

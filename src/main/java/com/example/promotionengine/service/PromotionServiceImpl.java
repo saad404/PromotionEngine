@@ -35,7 +35,7 @@ public class PromotionServiceImpl implements PromotionService {
                         finalPrice = finalPrice.add(BigDecimal.valueOf(PromotionName.THREEA.getValue())
                                 .multiply(BigDecimal.valueOf(times)));
                     }
-                    skuMap.put(SKU.A, new Long(quantityA - times * 3));
+                    skuMap.put(SKU.A, (long) (quantityA - times * 3));
                 }
 
                 if (p.getPromoName().equals(PromotionName.TWOB)) {
@@ -45,7 +45,7 @@ public class PromotionServiceImpl implements PromotionService {
                         finalPrice = finalPrice.add(BigDecimal.valueOf(PromotionName.TWOB.getValue())
                                 .multiply(BigDecimal.valueOf(times)));
                     }
-                    skuMap.put(SKU.B, new Long(quantityB - times * 2));
+                    skuMap.put(SKU.B, (long) (quantityB - times * 2));
                 }
 
                 if (p.getPromoName().equals(PromotionName.CD)) {
@@ -55,8 +55,8 @@ public class PromotionServiceImpl implements PromotionService {
                         if (quantityC >= 1 && quantityD >= 1) {
                             finalPrice = finalPrice.add(BigDecimal.valueOf(PromotionName.CD.getValue()));
                         }
-                        skuMap.put(SKU.C, new Long(quantityC - 1));
-                        skuMap.put(SKU.D, new Long(quantityD - 1));
+                        skuMap.put(SKU.C, (long) (quantityC - 1));
+                        skuMap.put(SKU.D, (long) (quantityD - 1));
                     }
                 }
             }

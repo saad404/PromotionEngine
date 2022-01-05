@@ -1,5 +1,9 @@
 package com.example.promotionengine.model;
 
+/**
+ * This is SKU enum class with the price as value.
+ * */
+
 public enum SKU {
     A(50), B(30), C(20), D(15);
 

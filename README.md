@@ -75,7 +75,7 @@ Total     280
 
 The project was developed in IntelliJ IDEA using Java 8, the Spring Boot framework and Maven. 
 
-In order to run the tests, go to root of the project in the terminal and execute the following command:
+In order to run the tests, make sure that you have Spring Boot and Maven installed on your system. Once that is done, go to root of the project in the terminal and execute the following command:
 
 ```
 mvn clean test

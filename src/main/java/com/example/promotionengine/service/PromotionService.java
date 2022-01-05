@@ -10,6 +10,6 @@ import com.example.promotionengine.model.SKU;
 
 public interface PromotionService {
 
-    public BigDecimal calculateFinalCartPrice(Cart cart, List<Promotion> promotions);
-    public Promotion createPromotion(PromotionName promotionName, SKU sku, int percent);
+    BigDecimal calculateFinalCartPrice(Cart cart, List<Promotion> promotions);
+    Promotion createPromotion(PromotionName promotionName, SKU sku, int percent);
 }

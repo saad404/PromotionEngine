@@ -2,7 +2,7 @@ package com.example.promotionengine.model;
 
 import java.math.BigDecimal;
 
-/**
+/** @author saad404
  * This is the Product class which holds basic info (skuId, desc, price) about Product.
  * BigDecimal is used for the price
  * */

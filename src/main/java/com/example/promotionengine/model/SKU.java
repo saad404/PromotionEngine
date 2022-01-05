@@ -1,6 +1,6 @@
 package com.example.promotionengine.model;
 
-/**
+/** @author saad404
  * This is SKU enum class with the price as value.
  * */
 

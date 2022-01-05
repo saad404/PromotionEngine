@@ -1,14 +1,13 @@
 package com.example.promotionengine.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.example.promotionengine.model.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class PromotionServiceTest {
@@ -43,5 +42,20 @@ public class PromotionServiceTest {
         List<Product> products = Arrays.asList(prodA, prodB, prodC);
         Cart cart = new Cart(products);
         assertEquals(BigDecimal.valueOf(100), service.calculateFinalCartPrice(cart, null));
+    }
+
+    @Test
+    public void calculateFinalPriceWithoutCartTest() {
+        assertThrows(
+                NullPointerException.class,
+                () -> {
+                    service.calculateFinalCartPrice(null, null);
+                });
+    }
+
+    @Test
+    public void createPromo3ProdATest() {
+        assertEquals(BigDecimal.valueOf(130), service.createPromotion(PromotionName.THREEA, SKU.A, 130)
+                .getPromoPrice());
     }
 }

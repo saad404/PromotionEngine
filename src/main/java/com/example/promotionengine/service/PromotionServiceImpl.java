@@ -11,6 +11,11 @@ public class PromotionServiceImpl implements PromotionService {
 
     BigDecimal finalPrice = new BigDecimal(0);
 
+    public Promotion createPromotion(PromotionName promoName, SKU sku, int price) {
+        Promotion promo = new Promotion(true, promoName, BigDecimal.valueOf(price));
+        return promo;
+    }
+
     @Override
     public BigDecimal calculateFinalCartPrice(Cart cart, List<Promotion> promotions) {
         List<Product> products = cart.getProducts();

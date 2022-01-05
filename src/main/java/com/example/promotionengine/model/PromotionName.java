@@ -5,7 +5,7 @@ public enum PromotionName {
 
     private int value;
 
-    private PromotionName(int value) {
+    PromotionName(int value) {
         this.value = value;
     }
 

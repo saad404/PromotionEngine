@@ -35,9 +35,8 @@ Active Promotions
 
 C & D for 30
 
----
 
-###Scenario A
+### Scenario A
 
 1 * A     50
 
@@ -47,9 +46,8 @@ C & D for 30
 
 Total     100
 
----
 
-###Scenario B
+### Scenario B
 
 5 * A     130 + 2*50
 
@@ -59,9 +57,8 @@ Total     100
 
 Total     370
 
----
 
-###Scenario C
+### Scenario C
 
 3 * A     130
 
@@ -73,7 +70,6 @@ Total     370
 
 Total     280
 
----
 
 ### General information
 

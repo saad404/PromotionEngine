@@ -9,7 +9,9 @@ public class PromotionServiceImpl implements PromotionService {
 
     @Override
     public BigDecimal calculatePromotion(List<Product> products) {
-        //TODO
-        return null;
+        BigDecimal price = products.stream().map(
+                x -> x.getPrice()
+        ).reduce(BigDecimal.ZERO, BigDecimal::add);
+        return price;
     }
 }

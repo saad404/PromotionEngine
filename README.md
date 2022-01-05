@@ -43,6 +43,11 @@ C & D for 30
 
 Total     100
 
+This scenario involves no active promotions, since there is only one instance of product A, one instance of product B,
+and one instance of product C. Therefore, none of the promotions apply. 
+
+It is simply a matter of filling the cart object with the aforementioned products and then calculate the 
+final price of the entire cart.
 
 ### Scenario B
 
@@ -54,6 +59,9 @@ Total     100
 
 Total     370
 
+In this case, the active promotion applies to three instances of product A, two instances of product B twice, and one 
+instance of product C, resulting in 370. This is done by iterating over the cart and applying the promotions to the respective
+products whenever the quantity of them satisfies the condition.
 
 ### Scenario C
 
@@ -66,6 +74,9 @@ Total     370
 1 * D     30
 
 Total     280
+
+Almost the same case as above, although the third promotion comes in play here. Since product C and D both appear, only 
+one of them should count in the calculation of the final price, hence the total is 280.
 
 
 ## General information

@@ -15,6 +15,7 @@ public class PromotionServiceTest {
     Product prodA = new Product(SKU.A, "Product A is added", BigDecimal.valueOf(50));
     Product prodB = new Product(SKU.B, "Product B is added", BigDecimal.valueOf(30));
     Product prodC = new Product(SKU.C, "Product C is added", BigDecimal.valueOf(20));
+    Product prodD = new Product(SKU.D, "Product D is added", BigDecimal.valueOf(15));
 
     @Test
     public void calculatePromotionWithPromotionAppliedScenarioATest() {
@@ -57,5 +58,26 @@ public class PromotionServiceTest {
     public void createPromo3ProdATest() {
         assertEquals(BigDecimal.valueOf(130), service.createPromotion(PromotionName.THREEA, SKU.A, 130)
                 .getPromoPrice());
+    }
+
+    @Test
+    public void calculateFinalPriceAfterPromotionScenarioBTest() {
+        List<Product> products = Arrays.asList(prodA, prodA, prodA, prodA, prodA, prodB, prodB, prodB, prodB, prodB,
+                prodC);
+        Cart cart = new Cart(products);
+        List<Promotion> promotions = Arrays.asList(new Promotion(true, PromotionName.THREEA, BigDecimal.
+                valueOf(130)), new Promotion(true, PromotionName.TWOB, BigDecimal.valueOf(45)),
+                new Promotion(true, PromotionName.CD, BigDecimal.valueOf(30)));
+        assertEquals(BigDecimal.valueOf(370), service.calculateFinalCartPrice(cart, promotions));
+    }
+
+    @Test
+    public void calculateFinalPriceAfterPromotionScenarioCTest() {
+        List<Product> products = Arrays.asList(prodA, prodA, prodA, prodB, prodB, prodB, prodB, prodB, prodC, prodD);
+        Cart cart = new Cart(products);
+        List<Promotion> promotions = Arrays.asList(new Promotion(true, PromotionName.THREEA,
+                BigDecimal.valueOf(130)), new Promotion(true, PromotionName.TWOB, BigDecimal.valueOf(45)),
+                new Promotion(true, PromotionName.CD, BigDecimal.valueOf(30)));
+        assertEquals(BigDecimal.valueOf(280), service.calculateFinalCartPrice(cart, promotions));
     }
 }
